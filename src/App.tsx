@@ -4,7 +4,6 @@ import Ponto, { IPonto } from './components/Ponto';
 
 
 function App() {
-  const [count, setCount] = useState(0);
   const [listaPontos, setListaPontos] = useState<IPonto[]>([]);
 
   useEffect(() => {
@@ -14,12 +13,12 @@ function App() {
   const geraPonto = (event: React.MouseEvent<HTMLElement>) => {
     console.log(`X: ${event.clientX} - Y: ${event.clientY}`);
 
-    const novaListaPontos = listaPontos.slice();
-    novaListaPontos.push({
-      x: event.clientX,
-      y: event.clientY
-    });
-    setListaPontos(novaListaPontos);
+    const ponto = {
+      x: event.clientX - 10,
+      y: event.clientY - 10
+    }
+
+    setListaPontos(prev => [...prev, ponto]);
   }
 
   const desfazer = (event: React.MouseEvent<HTMLElement>) => {
