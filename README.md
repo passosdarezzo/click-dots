@@ -9,7 +9,7 @@ Desenvolver uma aplicação em que:
 1. O usuário pode clicar em qualquer lugar da página.
 2. Deve-se renderiza um pequeno círculo na posição clicada.
 3. A cada clique, mantém-se os círculos já criados e renderiza-se um novo.
-4. Crie 3 funcionalidades:
+4. Crie 4 funcionalidades:
 
 - desfazer
 - refazer
