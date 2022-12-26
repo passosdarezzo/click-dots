@@ -22,15 +22,38 @@ function App() {
     setListaPontos(novaListaPontos);
   }
 
+  const desfazer = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    const novaListaPontos = listaPontos.slice();
+    novaListaPontos.pop();
+    setListaPontos(novaListaPontos);
+  }
+
+  const limpar = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    setListaPontos([]);
+  }
+
   return (
     <div
       className="page"
       onClick={geraPonto}
     >
-      
+      <button
+        onClick={desfazer}
+      >
+        Desfazer
+      </button>
+      <button
+        onClick={limpar}
+      >
+        Limpar
+      </button>
+
       {
-        listaPontos.map(p => (
+        listaPontos.map((p, idx) => (
           <Ponto
+            key={idx}
             x={p.x}
             y={p.y}
           />

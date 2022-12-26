@@ -5,7 +5,7 @@ export interface IPonto {
   y: number
 }
 
-const Ponto = (props: IPonto) => {
+const Ponto = ({x, y}: IPonto) => {
 
   return (
     <span style={{
@@ -14,8 +14,8 @@ const Ponto = (props: IPonto) => {
       width: "20px",
       height: "20px",
       borderRadius: "20px",
-      top: props.y + "px",
-      left: props.x + "px"
+      top: y + "px",
+      left: x + "px"
     }}></span>
   );
 }
