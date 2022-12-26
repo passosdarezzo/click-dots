@@ -16,6 +16,20 @@ Desenvolver uma aplicação em que:
 - limpar
 - selecionar cor
 
+## Execução
+
+Para rodar o app execute o comando no CMD:
+
+```cmd
+npm run dev
+```
+
+## Geração da Página estática do Projeto no GitHub
+
+```cmd
+> npm run deploy
+```
+
 ## Conclusão
 
 O projeto concluído pode ser visualizado [AQUI](https://passosdarezzo.github.io/click-dots)
