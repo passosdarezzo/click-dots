@@ -5,6 +5,7 @@ import Ponto, { IPonto } from './components/Ponto';
 
 function App() {
   const [listaPontos, setListaPontos] = useState<IPonto[]>([]);
+  const [refazer, setRefazer] = useState<IPonto[]>([]);
 
   useEffect(() => {
     window.document.title = "Click-Dots";
@@ -24,13 +25,28 @@ function App() {
   const desfazer = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     const novaListaPontos = listaPontos.slice();
-    novaListaPontos.pop();
+    const ponto = novaListaPontos.pop();
     setListaPontos(novaListaPontos);
+
+    if (ponto !== undefined) {
+      const novaListaRefazer = refazer.slice();
+      novaListaRefazer.push(ponto);
+      setRefazer(novaListaRefazer);
+    }
   }
 
   const limpar = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     setListaPontos([]);
+  }
+
+  const onRefazer = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    const ponto = refazer.pop();
+
+    if(ponto !== undefined) {
+      setListaPontos(prev => [...prev, ponto]);
+    }
   }
 
   return (
@@ -42,6 +58,11 @@ function App() {
         onClick={desfazer}
       >
         Desfazer
+      </button>
+      <button
+        onClick={onRefazer}
+      >
+        Refazer
       </button>
       <button
         onClick={limpar}
