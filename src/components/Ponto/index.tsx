@@ -8,12 +8,7 @@ export interface IPonto {
 const Ponto = ({x, y}: IPonto) => {
 
   return (
-    <span style={{
-      position: "fixed",
-      backgroundColor: "black",
-      width: "20px",
-      height: "20px",
-      borderRadius: "20px",
+    <span className="dot" style={{
       top: y + "px",
       left: x + "px"
     }}></span>

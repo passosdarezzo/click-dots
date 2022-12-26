@@ -14,3 +14,11 @@
   top: 0;
   left: 0;
 }
+
+.dot {
+  position: fixed;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
